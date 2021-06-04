@@ -111,7 +111,7 @@ displayButtonTemp.addEventListener('click', function() {
 
 resetButtonTemp.addEventListener('click', function() {
     clearLocalStorage(plateRegNumsKey2);
-    errorMsgElementTemp.innerHTML = "Local Storage cleared!";
+    // errorMsgElementTemp.innerHTML = "Local Storage cleared!";
     errorMsgElementTemp.style.color = "green";
     clearField(RegTextHolderElementTemp)
     errorMessageTimeoutTemp();

@@ -30,7 +30,7 @@ addregBtnTemp.addEventListener('click', function() {
 
     var registrationsNumberTemp = RegTextHolderElementTemp.value;
 
-    if (!registrationFunc.emptyStringTest(registrationsNumberTemp)) {
+    if (!registrationFunc.emptyStringTest(registrationsNumberTemp)) {   
         errorMsgElementTemp.innerHTML = "Please enter a number plate, required";
         errorMsgElementTemp.style.color = "red";
         errorMessageTimeoutTemp();
@@ -151,16 +151,18 @@ function displayElementsOnFormByTownTemp() {
                 errorMsgElementTemp.innerHTML = "Please first select the town you want to filter on";
                 errorMsgElementTemp.style.color = "red";
                 errorMessageTimeout();
+                return;
             }
         }
         if(plateRegNumsArrayByTownTemp.length > 0) {
             document.querySelector("#templateDisplay").innerHTML = templateCompiler({plate : plateRegNumsArrayByTownTemp})
-        } else {
+        } else{
             errorMsgElementTemp.innerHTML = "No list to dispaly!";
             errorMsgElementTemp.style.color = "orange";
             errorMessageTimeoutTemp();
+            return;
         }
-        //This iterats through all the filtered elements in the local storage
+        
     }
 }
 /**
